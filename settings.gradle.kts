@@ -10,6 +10,7 @@
 rootProject.name = "domain-archetype"
 include("domain:model")
 include("domain:impl")
+include("support")
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {

@@ -6,6 +6,10 @@ plugins {
     id("com.github.spotbugs")
 }
 
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+}
+
 configurations {
     compileOnly {
         extendsFrom(configurations.annotationProcessor.get())
