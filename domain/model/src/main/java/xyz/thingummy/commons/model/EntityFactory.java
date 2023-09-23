@@ -19,7 +19,7 @@
  * SOFTWARE.
  */
 
-package xyz.thingummy.commons;
+package xyz.thingummy.commons.model;
 
-public interface Factory<F extends Factory<F,T>,T> {
+public interface EntityFactory<F extends EntityFactory<F, E>, E extends Entity<E, ?>> extends Factory<F, E> {
 }

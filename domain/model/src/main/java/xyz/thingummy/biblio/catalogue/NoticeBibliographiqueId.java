@@ -23,23 +23,24 @@ package xyz.thingummy.biblio.catalogue;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
-import xyz.thingummy.commons.Id;
+import xyz.thingummy.commons.model.AbstractId_;
 
 import java.util.UUID;
 
 @Getter
 @Setter
-public abstract class NoticeBibliographiqueId extends Id<NoticeBibliographique> {
-    public static @NonNull NoticeBibliographiqueId of(@NonNull String id) throws InstantiationException {
-        return Id.of(id, NoticeBibliographiqueId.class);
-    }
+public abstract class NoticeBibliographiqueId extends AbstractId_<NoticeBibliographique> {
     public NoticeBibliographiqueId(UUID id, Long juncture) {
         super(id, juncture);
     }
+
     public NoticeBibliographiqueId(UUID id) {
         super(id, null);
     }
 
+    public static @NonNull NoticeBibliographiqueId of(@NonNull String id) throws InstantiationException {
+        return AbstractId_.of(id, NoticeBibliographiqueId.class);
+    }
 
 
 }

@@ -18,7 +18,29 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package xyz.thingummy.commons;
+package xyz.thingummy.biblio.catalogue;
 
-public interface Repository<E extends Entity<E,I>,I extends Id<E>> {
+import jakarta.persistence.EmbeddedId;
+import jakarta.persistence.Entity;
+import lombok.NonNull;
+
+@Entity
+public class Auteur_ extends Auteur {
+
+    AuteurId id;
+
+    public Auteur_() {
+        super();
 }
+
+    @NonNull
+    @Override
+    @EmbeddedId
+    public AuteurId getId() {
+        return id;
+    }
+
+    @Override
+    public void setId(AuteurId id) {
+        this.id = id;
+    }

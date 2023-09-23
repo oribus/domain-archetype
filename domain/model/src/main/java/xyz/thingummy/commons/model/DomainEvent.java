@@ -18,8 +18,18 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+package xyz.thingummy.commons.model;
 
-package xyz.thingummy.commons;
+import java.time.Instant;
 
-public interface EntityFactory<F extends EntityFactory<F,E>,E extends Entity<E,?>> extends Factory<F,E> {
+public abstract class DomainEvent<E extends AggregateRoot<E, ?>> extends ValueObject<DomainEvent<E>> {
+    private final Instant occuredAt;
+
+    public DomainEvent(Instant occuredAt) {
+        this.occuredAt = occuredAt;
+    }
+
+    public Instant occurredAt() {
+        return occuredAt;
+    }
 }

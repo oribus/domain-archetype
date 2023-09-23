@@ -18,36 +18,23 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package xyz.thingummy.commons;
 
-public class DomainException extends RuntimeException {
-    private final ErrorCode errorCode;
+package xyz.thingummy.commons.model;
 
-    public DomainException(String message) {
-        super(message);
-        this.errorCode = ErrorCode.GENERAL_DOMAIN_ERROR;
+import lombok.Getter;
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@RequiredArgsConstructor(access = lombok.AccessLevel.PROTECTED)
+public abstract class WithJuncture<T extends Id<?>> {
+    @NonNull
+    Long juncture;
+
+    protected WithJuncture() {
+        this(Long.valueOf(0L));
     }
 
-    public DomainException(String message, ErrorCode errorCode) {
-        super(message);
-        this.errorCode = errorCode;
-    }
-
-    public DomainException(String message, Throwable cause) {
-        super(message, cause);
-        this.errorCode = ErrorCode.GENERAL_DOMAIN_ERROR;
-    }
-
-    public DomainException(String message, ErrorCode errorCode, Throwable cause) {
-        super(message, cause);
-        this.errorCode = errorCode;
-    }
-
-    public ErrorCode getErrorCode() {
-        return errorCode;
-    }
-
-    public enum ErrorCode {
-        GENERAL_DOMAIN_ERROR
-    }
 }

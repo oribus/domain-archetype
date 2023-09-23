@@ -18,37 +18,16 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
+package xyz.thingummy.commons.model;
 
-plugins {
-    java
-    //checkstyle
+import java.util.ArrayList;
+import java.util.Collection;
 
-    // NOTE: external plugin version is specified in implementation dependency artifact of the project's build file
-    id("com.github.spotbugs")
-}
+public abstract class AbstractAggregateRoot<E extends AggregateRoot<E, I>, I extends Id<E>> implements AggregateRoot<E, I> {
 
-java {
-    sourceCompatibility = JavaVersion.VERSION_17
-}
+    private final Collection<DomainEvent<E>> events = new ArrayList<>();
 
-configurations {
-    compileOnly {
-        extendsFrom(configurations.annotationProcessor.get())
+    public Collection<DomainEvent<E>> domainEvents() {
+        return events;
     }
-}
-
-dependencies {
-    spotbugsPlugins("com.h3xstream.findsecbugs:findsecbugs-plugin:1.12.0")
-    compileOnly("org.projectlombok:lombok:1.18.28")
-    compileOnly("org.mapstruct:mapstruct:1.5.5.Final")
-    annotationProcessor("org.projectlombok:lombok:1.18.28")
-    annotationProcessor("org.mapstruct:mapstruct-processor:1.5.5.Final")
-    testCompileOnly("org.projectlombok:lombok:1.18.28")
-    testCompileOnly("org.mapstruct:mapstruct:1.5.5.Final")
-    testAnnotationProcessor("org.projectlombok:lombok:1.18.28")
-    testAnnotationProcessor("org.mapstruct:mapstruct-processor:1.5.5.Final")
-}
-
-tasks.withType<Test> {
-    useJUnitPlatform()
 }

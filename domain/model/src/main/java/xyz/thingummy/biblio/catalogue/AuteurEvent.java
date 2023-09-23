@@ -21,7 +21,8 @@
 package xyz.thingummy.biblio.catalogue;
 
 import lombok.Value;
-import xyz.thingummy.commons.DomainEvent;
+import xyz.thingummy.commons.model.DomainEvent;
+
 @Value
 public class AuteurEvent extends DomainEvent<Auteur> {
 }

@@ -18,7 +18,12 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package xyz.thingummy.commons;
 
-public interface DomainService<S extends DomainService<S>> {
+package xyz.thingummy.commons.model;
+
+abstract class AbstractValueObject<T extends ValueObject<T>> implements ValueObject<T> {
+    @Override
+    public String toString() {
+        return getClass().getSimpleName() + " [hash=" + hashCode() + "]";
+    }
 }

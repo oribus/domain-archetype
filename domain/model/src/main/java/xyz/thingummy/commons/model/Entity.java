@@ -18,16 +18,9 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package xyz.thingummy.commons;
+package xyz.thingummy.commons.model;
 
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
-
-@RequiredArgsConstructor(access = lombok.AccessLevel.PROTECTED)
-@Getter
-public abstract class Entity<T extends Entity<T,I>,I extends Id<T>> {
-    @NonNull
-    private I id;
+public interface Entity<T extends Entity<T, I>, I extends Id<T>> {
+    I getId();
 }
 

@@ -18,20 +18,36 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package xyz.thingummy.commons;
+package xyz.thingummy.commons.model;
 
-import lombok.Value;
-import lombok.experimental.NonFinal;
+public class DomainException extends RuntimeException {
+    private final ErrorCode errorCode;
 
-abstract public class ValueObject<T extends ValueObject<T>>  {
-    @Override
-    abstract public int hashCode() ;
+    public DomainException(String message) {
+        super(message);
+        this.errorCode = ErrorCode.GENERAL_DOMAIN_ERROR;
+    }
 
-    @Override
-    abstract public boolean equals(Object obj);
+    public DomainException(String message, ErrorCode errorCode) {
+        super(message);
+        this.errorCode = errorCode;
+    }
 
-    @Override
-    public String toString() {
-        return getClass().getSimpleName() + " [hash=" + hashCode() + "]";
+    public DomainException(String message, Throwable cause) {
+        super(message, cause);
+        this.errorCode = ErrorCode.GENERAL_DOMAIN_ERROR;
+    }
+
+    public DomainException(String message, ErrorCode errorCode, Throwable cause) {
+        super(message, cause);
+        this.errorCode = errorCode;
+    }
+
+    public ErrorCode getErrorCode() {
+        return errorCode;
+    }
+
+    public enum ErrorCode {
+        GENERAL_DOMAIN_ERROR
     }
 }

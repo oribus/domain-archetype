@@ -18,20 +18,33 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package xyz.thingummy.commons;
 
-import lombok.NonNull;
+package xyz.thingummy.biblio.catalogue;
 
-import java.util.Collection;
+import xyz.thingummy.commons.model.WithJuncture;
 
-public abstract class AggregateRoot<E extends AggregateRoot<E,I>,I extends Id<E>> extends Entity<E,I> {
+import java.util.UUID;
 
-    private Collection<DomainEvent<E>> events;
-
-    Collection<DomainEvent<E>> domainEvents() {
-        return events;
+public class AuteurId_ extends WithJuncture<AuteurId_> implements AuteurId {
+    public AuteurId_() {
+        super();
     }
-    protected AggregateRoot(@NonNull I id) {
-        super(id);
+
+    @Override
+    public UUID getId() {
+        return null;
     }
+
+    @Override
+    public boolean isWithJuncture() {
+        return true;
+    }
+
+
+    @Override
+    public String asString() {
+        return null;
+    }
+
+
 }

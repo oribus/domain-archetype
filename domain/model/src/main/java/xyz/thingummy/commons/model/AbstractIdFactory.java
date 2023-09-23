@@ -18,10 +18,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package xyz.thingummy.commons;
+package xyz.thingummy.commons.model;
 
-import java.util.function.Predicate;
-
-public interface Specification<T> extends Predicate<T> {
-    boolean isSatisfiedBy(T t);
+public class IdFactory<T extends Id> {
 }

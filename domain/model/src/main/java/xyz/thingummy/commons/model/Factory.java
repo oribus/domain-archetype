@@ -18,7 +18,8 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package xyz.thingummy.commons;
 
-public class AbstractIdFactory {
+package xyz.thingummy.commons.model;
+
+public interface Factory<F extends Factory<F, T>, T> {
 }

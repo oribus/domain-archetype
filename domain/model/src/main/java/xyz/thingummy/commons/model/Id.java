@@ -18,18 +18,41 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package xyz.thingummy.commons;
 
-import java.time.Instant;
+package xyz.thingummy.commons.model;
 
-public abstract class DomainEvent<E extends AggregateRoot<E,?>> extends ValueObject<DomainEvent<E>> {
-    private final Instant occuredAt;
+import java.util.UUID;
 
-    public DomainEvent(Instant occuredAt) {
-        this.occuredAt = occuredAt;
+public interface Id<T extends Entity<T, ? extends Id<T>>> extends ValueObject<Id<T>> {
+
+
+    /**
+     * Returns the id of the entity or aggregate root as a UUID
+     *
+     * @return the id of the entity or aggregate root
+     */
+    UUID getId();
+
+    /**
+     * Returns whether the id is a plain ID or an ID with a juncture
+     *
+     * @return true if the id is a plain ID, false otherwise
+     */
+    default boolean isPlainId() {
+        return !isWithJuncture();
     }
 
-    public Instant occurredAt() {
-        return occuredAt;
-    }
+    /**
+     * Returns whether the id is an ID with a juncture or a plain ID
+     *
+     * @return true if the id is an ID with a juncture, false otherwise
+     */
+    boolean isWithJuncture();
+
+    /**
+     * Returns the String representation of the id formed of a UUID and an optional juncture separated by a colon
+     *
+     * @return the String representation of the id
+     */
+    String asString();
 }

@@ -20,19 +20,10 @@
  */
 package xyz.thingummy.biblio.catalogue;
 
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.Setter;
-import xyz.thingummy.commons.Id;
-
-import java.util.UUID;
-
-@Getter
-@Setter
-public abstract class AuteurId extends Id<Auteur> {
+import xyz.thingummy.commons.model.Id;
 
 
-    protected AuteurId(@NonNull UUID id, Long juncture) {
-        super(id, juncture);
-    }
+public interface AuteurId extends Id<Auteur> {
+
+
 }

@@ -23,16 +23,14 @@ package xyz.thingummy.biblio.catalogue;
 import lombok.Getter;
 import lombok.NonNull;
 import lombok.Setter;
-import xyz.thingummy.commons.Entity;
+import xyz.thingummy.commons.model.Entity;
 
-import java.util.LinkedHashSet;
-import java.util.UUID;
-
-@Getter @Setter
+@Getter
+@Setter
 public abstract class NoticeBibliographique extends Entity<NoticeBibliographique, NoticeBibliographiqueId> {
     private String isbn;
     private String titre;
-//    private String editeur;
+    //    private String editeur;
     private String datePublication;
     private String resume;
     private String issn;

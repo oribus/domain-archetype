@@ -20,12 +20,32 @@
  */
 package xyz.thingummy.biblio.catalogue;
 
-import lombok.NonNull;
-import xyz.thingummy.commons.AggregateRoot;
-import xyz.thingummy.commons.Entity;
+import jakarta.validation.constraints.NotBlank;
+import lombok.*;
+import xyz.thingummy.commons.model.AggregateRoot;
 
-public abstract class Auteur extends AggregateRoot<Auteur,AuteurId> {
-    protected Auteur(@NonNull AuteurId id) {
-        super(id);
-    }
+import java.util.Date;
+
+@NoArgsConstructor(access = lombok.AccessLevel.PROTECTED)
+@RequiredArgsConstructor(access = lombok.AccessLevel.PROTECTED)
+@Getter
+public abstract class Auteur implements AggregateRoot<Auteur, AuteurId> {
+    @NonNull
+    @Setter(AccessLevel.PROTECTED)
+    private AuteurId id;
+    @NonNull
+    @NotBlank
+    @Setter(AccessLevel.PUBLIC)
+    private String firstName;
+    @NonNull
+    @NotBlank
+    @Setter(AccessLevel.PUBLIC)
+    private String lastName;
+    @Setter(AccessLevel.PUBLIC)
+    private Date dateOfBirth;
+
+
 }
+
+
+
