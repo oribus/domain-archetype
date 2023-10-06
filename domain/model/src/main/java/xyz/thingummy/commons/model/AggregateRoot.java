@@ -22,7 +22,7 @@ package xyz.thingummy.commons.model;
 
 import java.util.Collection;
 
-public interface AggregateRoot<E extends AggregateRoot<E, I>, I extends Id<E>> extends Entity<E, I> {
+public interface AggregateRoot<E extends AggregateRoot<E, I>, I extends EntityId<E>> extends Entity<E, I> {
 
     Collection<DomainEvent<E>> domainEvents();
 }

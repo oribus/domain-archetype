@@ -23,7 +23,7 @@ package xyz.thingummy.commons.model;
 
 import java.util.UUID;
 
-public interface Id_<T extends Entity<T, ? extends Id_<T>>> extends ValueObject<Id_<T>> {
+public interface Id_<T extends BaseEntity<T, ? extends Id_<T>>> extends ValueObject<Id_<T>> {
 
 
     /**

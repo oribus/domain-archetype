@@ -22,7 +22,7 @@ package xyz.thingummy.commons.model;
 
 import java.time.Instant;
 
-public abstract class DomainEvent<E extends AggregateRoot<E, ?>> extends ValueObject<DomainEvent<E>> {
+public abstract class DomainEvent<E extends AggregateRoot<E, ?>> implements ValueObject<DomainEvent<E>> {
     private final Instant occuredAt;
 
     public DomainEvent(Instant occuredAt) {

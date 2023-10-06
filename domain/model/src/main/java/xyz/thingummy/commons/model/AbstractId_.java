@@ -32,7 +32,7 @@ import java.util.UUID;
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @RequiredArgsConstructor(access = AccessLevel.PROTECTED)
-public abstract class AbstractId_<T extends Entity<T, ? extends Id<T>>> implements ValueObject<Id<T>> {
+public abstract class AbstractId_<T extends BaseEntity<T, ? extends Id<T>>> implements ValueObject<Id<T>> {
     @NonNull
     /*
      *  The id of the entity as a UUID

@@ -20,9 +20,9 @@
  */
 package xyz.thingummy.commons.model;
 
-import java.io.Serializable;
+import java.util.Collection;
+import java.util.UUID;
 
-public interface Entity<T extends Entity<T, I>, I extends Id<T, ?>> extends Serializable {
+public interface Entity<T extends Entity<T,I>, I extends EntityId<T>> extends BaseEntity<T, I> {
     I getId();
 }
-

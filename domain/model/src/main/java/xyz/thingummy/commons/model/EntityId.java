@@ -21,5 +21,21 @@
 
 package xyz.thingummy.commons.model;
 
-public interface EntityFactory<F extends EntityFactory<F, E>, E extends BaseEntity<E, ?>> extends Factory<F, E> {
+import java.util.UUID;
+
+/**
+ * An id is a value object that identifies an Entity being plain standalone or part of an aggregate
+ * (either an {@link AggregatedEntity} or an {@link AggregateRoot}).
+ *
+ * @param <E> The type of the entity identified by this id
+ * @param <T> The type of the id
+ */
+public interface EntityId<E extends Entity<E, ? extends EntityId<E>>> extends Id<E, UUID> {
+
+
+    /**
+     * Returns the id of the
+     */
+    UUID getId();
+
 }

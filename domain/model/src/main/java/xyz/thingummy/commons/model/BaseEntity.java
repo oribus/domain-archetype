@@ -18,8 +18,11 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-
 package xyz.thingummy.commons.model;
 
-public interface EntityFactory<F extends EntityFactory<F, E>, E extends BaseEntity<E, ?>> extends Factory<F, E> {
+import java.io.Serializable;
+
+public interface BaseEntity<T extends BaseEntity<T, I>, I extends Id<T, ?>> extends Serializable {
+    I getId();
 }
+

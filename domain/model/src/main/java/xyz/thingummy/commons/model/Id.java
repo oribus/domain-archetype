@@ -28,7 +28,7 @@ package xyz.thingummy.commons.model;
  * @param <E> The type of the entity identified by this id
  * @param <T> The type of the id
  */
-public interface Id<E extends Entity<E, ? extends Id<E, T>>, T> extends ValueObject<Id<E, T>> {
+public interface Id<E extends BaseEntity<E, ? extends Id<E, T>>, T> extends ValueObject<Id<E, T>> {
 
 
     /**

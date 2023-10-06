@@ -21,6 +21,6 @@
 
 package xyz.thingummy.commons.model;
 
-interface AggregatedEntity<E extends AggregatedEntity<E, I, R>, I extends LocalId<E, ?>, R extends AggregateRoot<?, ?>> extends Entity<E, I> {
+interface AggregatedEntity<E extends AggregatedEntity<E, I, R>, I extends LocalId<E, ?>, R extends AggregateRoot<?, ?>> extends BaseEntity<E, I> {
     R getAggregateRoot();
 }

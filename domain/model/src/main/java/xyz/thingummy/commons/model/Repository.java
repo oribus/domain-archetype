@@ -20,5 +20,5 @@
  */
 package xyz.thingummy.commons.model;
 
-public interface Repository<E extends Entity<E, I>, I extends AbstractId_<E>> {
+public interface Repository<E extends BaseEntity<E, I>, I extends AbstractId_<E>> {
 }
