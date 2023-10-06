@@ -20,7 +20,9 @@
  */
 package xyz.thingummy.commons.model;
 
-public interface ValueObject<T extends ValueObject<T>> {
+import java.io.Serializable;
+
+public interface ValueObject<T extends ValueObject<T>> extends Serializable {
     @Override
     int hashCode();
 

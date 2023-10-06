@@ -19,17 +19,18 @@
  * SOFTWARE.
  */
 
-package xyz.thingummy.biblio.catalogue;
+package xyz.thingummy.services.organisation;
 
 import lombok.Getter;
 import lombok.Setter;
+import xyz.thingummy.commons.model.Id;
 import xyz.thingummy.commons.model.WithJuncture;
 
 import java.util.UUID;
 
 @Getter
 @Setter
-public class AuteurId_ extends WithJuncture<AuteurId_> implements AuteurId {
+public class AuteurId_ extends WithJuncture<AuteurId_> implements Id<Auteur> {
     UUID id;
 
     public AuteurId_() {

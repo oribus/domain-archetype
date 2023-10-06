@@ -21,5 +21,5 @@
 
 package xyz.thingummy.commons.model;
 
-public interface LocalId {
+public interface LocalId<E extends AggregatedEntity<E, ? extends LocalId<E, I>, ?>, I> extends Id<E, I> {
 }

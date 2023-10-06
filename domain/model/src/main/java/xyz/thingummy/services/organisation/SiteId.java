@@ -21,4 +21,8 @@
 
 package xyz.thingummy.services.organisation;
 
-public class SiteId implements ValueObject<SiteId>, Serializable {
+import xyz.thingummy.commons.model.Id;
+
+public class SiteId implements Id<Site> {
+
+}

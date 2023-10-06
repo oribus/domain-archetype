@@ -19,7 +19,7 @@
  * SOFTWARE.
  */
 
-package xyz.thingummy;
+package xyz.thingummy.services.organisation;
 
 public class Pays implements Entity<Pays, PaysId> {
     private final PaysId id;

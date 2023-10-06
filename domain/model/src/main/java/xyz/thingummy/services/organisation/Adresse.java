@@ -25,6 +25,7 @@ public class Adresse implements ValueObject<Adresse> {
     private String rue; // Rue
     private Ville ville;
     private String codePostal; // Code Postal
+    private  E
 
 
 }

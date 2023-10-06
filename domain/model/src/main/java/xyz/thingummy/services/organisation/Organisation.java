@@ -25,9 +25,5 @@ public class Organisation implements AggregateRoot<Organisation, OrganisationId>
     private OrganisationId id;
     private String nom; // Nom
     private Adresse adresse;
+}
 
-    public Organisation(OrganisationId id, String nom, Adresse adresse) {
-        this.id = id;
-        this.nom = nom;
-        this.adresse = adresse;
-    }

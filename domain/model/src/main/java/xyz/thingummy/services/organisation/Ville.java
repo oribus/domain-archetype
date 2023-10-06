@@ -22,14 +22,14 @@
 package xyz.thingummy.services.organisation;
 
 public class Ville implements Entity<Ville, VilleId> {
-    private VilleId id;
-    private String nom; // Nom
-    private État état;
+    private final VilleId id;
+    private final String nom; // Nom
+    private final Etat etat;
 
-    public Ville(VilleId id, String nom, État état) {
+    public Ville(VilleId id, String nom, Etat etat) {
         this.id = id;
         this.nom = nom;
-        this.état = état;
+        this.etat = etat;
     }
 
     // Accesseurs, mutateurs et autres méthodes...

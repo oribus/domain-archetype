@@ -21,5 +21,5 @@
 
 package xyz.thingummy.commons.model;
 
-public interface GlobalId {
+public interface GlobalId<E extends Entity<E, ? extends Id<E, UUID>>, UUID> extends Id<E, UUID> {
 }

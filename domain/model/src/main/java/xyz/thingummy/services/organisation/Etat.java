@@ -19,18 +19,12 @@
  * SOFTWARE.
  */
 
-package xyz.thingummy;
+package xyz.thingummy.services.organisation;
 
-public class État implements Entity<État, ÉtatId> {
-    private final ÉtatId id;
-    private final String nom; // Nom
-    private final Pays pays;
+public class EtatOu implements Entity<Etat, EtatId> {
+    private EtatId id;
+    private String nom; // Nom
+    private Pays pays;
 
-    public État(ÉtatId id, String nom, Pays pays) {
-        this.id = id;
-        this.nom = nom;
-        this.pays = pays;
-    }
 
-    // Accesseurs, mutateurs et autres méthodes...
 }

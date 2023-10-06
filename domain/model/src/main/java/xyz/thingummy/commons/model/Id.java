@@ -21,38 +21,19 @@
 
 package xyz.thingummy.commons.model;
 
-import java.util.UUID;
+/**
+ * An id is a value object that identifies an Entity being plain standalone or part of an aggregate
+ * (either an {@link AggregatedEntity} or an {@link AggregateRoot}).
+ *
+ * @param <E> The type of the entity identified by this id
+ * @param <T> The type of the id
+ */
+public interface Id<E extends Entity<E, ? extends Id<E, T>>, T> extends ValueObject<Id<E, T>> {
 
-public interface Id<T extends Entity<T, ? extends Id<T>>> extends ValueObject<Id<T>> {
-
-
-    /**
-     * Returns the id of the entity or aggregate root as a UUID
-     *
-     * @return the id of the entity or aggregate root
-     */
-    UUID getId();
 
     /**
-     * Returns whether the id is a plain ID or an ID with a juncture
-     *
-     * @return true if the id is a plain ID, false otherwise
+     * Returns the id of the
      */
-    default boolean isPlainId() {
-        return !isWithJuncture();
-    }
+    T getId();
 
-    /**
-     * Returns whether the id is an ID with a juncture or a plain ID
-     *
-     * @return true if the id is an ID with a juncture, false otherwise
-     */
-    boolean isWithJuncture();
-
-    /**
-     * Returns the String representation of the id formed of a UUID and an optional juncture separated by a colon
-     *
-     * @return the String representation of the id
-     */
-    String asString();
 }

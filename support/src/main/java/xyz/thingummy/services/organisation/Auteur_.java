@@ -18,7 +18,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package xyz.thingummy.biblio.catalogue;
+package xyz.thingummy.services.organisation;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

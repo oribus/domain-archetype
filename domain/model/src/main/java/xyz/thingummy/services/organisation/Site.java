@@ -26,3 +26,4 @@ public class Site implements Entity<Site, SiteId> {
     private String nom; // Nom du site
     private Adresse adresse;
     private Organisation organisation;
+}
