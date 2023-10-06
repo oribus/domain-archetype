@@ -18,34 +18,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package xyz.thingummy.biblio.catalogue;
 
-import jakarta.validation.constraints.NotBlank;
-import lombok.*;
-import xyz.thingummy.commons.model.AggregateRoot;
+package xyz.thingummy.services.organisation;
 
-import java.util.Date;
-
-@NoArgsConstructor(access = lombok.AccessLevel.PROTECTED)
-@RequiredArgsConstructor(access = lombok.AccessLevel.PROTECTED)
-@Getter
-public abstract class Auteur implements AggregateRoot<Auteur, AuteurId> {
-    @NonNull
-    @Setter(AccessLevel.PROTECTED)
-    private AuteurId id;
-    @NonNull
-    @NotBlank
-    @Setter(AccessLevel.PUBLIC)
-    private String firstName;
-    @NonNull
-    @NotBlank
-    @Setter(AccessLevel.PUBLIC)
-    private String lastName;
-    @Setter(AccessLevel.PUBLIC)
-    private Date dateOfBirth;
-
-
-}
-
-
-
+public class SiteId implements ValueObject<SiteId>, Serializable {

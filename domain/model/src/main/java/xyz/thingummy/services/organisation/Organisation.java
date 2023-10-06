@@ -18,11 +18,16 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package xyz.thingummy.biblio.catalogue;
 
-public class CatalogueIdFactory {
+package xyz.thingummy.services.organisation;
 
-    public NoticeBibliographiqueId newNoticeBibliographiqueId() {
-        return new NoticeBibliographiqueId();
+public class Organisation implements AggregateRoot<Organisation, OrganisationId> {
+    private OrganisationId id;
+    private String nom; // Nom
+    private Adresse adresse;
+
+    public Organisation(OrganisationId id, String nom, Adresse adresse) {
+        this.id = id;
+        this.nom = nom;
+        this.adresse = adresse;
     }
-}

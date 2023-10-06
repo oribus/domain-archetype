@@ -19,32 +19,18 @@
  * SOFTWARE.
  */
 
-package xyz.thingummy.biblio.catalogue;
+package xyz.thingummy;
 
-import xyz.thingummy.commons.model.WithJuncture;
+public class État implements Entity<État, ÉtatId> {
+    private final ÉtatId id;
+    private final String nom; // Nom
+    private final Pays pays;
 
-import java.util.UUID;
-
-public class AuteurId_ extends WithJuncture<AuteurId_> implements AuteurId {
-    public AuteurId_() {
-        super();
+    public État(ÉtatId id, String nom, Pays pays) {
+        this.id = id;
+        this.nom = nom;
+        this.pays = pays;
     }
 
-    @Override
-    public UUID getId() {
-        return null;
-    }
-
-    @Override
-    public boolean isWithJuncture() {
-        return true;
-    }
-
-
-    @Override
-    public String asString() {
-        return null;
-    }
-
-
+    // Accesseurs, mutateurs et autres méthodes...
 }

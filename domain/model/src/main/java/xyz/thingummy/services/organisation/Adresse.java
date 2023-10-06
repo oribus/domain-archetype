@@ -18,12 +18,13 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package xyz.thingummy.biblio.catalogue;
 
-import xyz.thingummy.commons.model.Id;
+package xyz.thingummy.services.organisation;
 
-
-public interface AuteurId extends Id<Auteur> {
+public class Adresse implements ValueObject<Adresse> {
+    private String rue; // Rue
+    private Ville ville;
+    private String codePostal; // Code Postal
 
 
 }

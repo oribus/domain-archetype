@@ -18,29 +18,19 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package xyz.thingummy.biblio.catalogue;
 
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
-import lombok.NonNull;
+package xyz.thingummy;
 
-@Entity
-public class Auteur_ extends Auteur {
+public class Pays implements Entity<Pays, PaysId> {
+    private final PaysId id;
+    private final String nom; // Nom
+    private final String code;
 
-    AuteurId id;
-
-    public Auteur_() {
-        super();
-}
-
-    @NonNull
-    @Override
-    @EmbeddedId
-    public AuteurId getId() {
-        return id;
-    }
-
-    @Override
-    public void setId(AuteurId id) {
+    public Pays(PaysId id, String nom, String code) {
         this.id = id;
+        this.nom = nom;
+        this.code = code;
     }
+
+    // Accesseurs, mutateurs et autres méthodes...
+}

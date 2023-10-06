@@ -18,24 +18,8 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-package xyz.thingummy.biblio.catalogue;
 
-import lombok.Getter;
-import lombok.NonNull;
-import lombok.Setter;
-import xyz.thingummy.commons.model.Entity;
+package xyz.thingummy.commons.model;
 
-@Getter
-@Setter
-public abstract class NoticeBibliographique extends Entity<NoticeBibliographique, NoticeBibliographiqueId> {
-    private String isbn;
-    private String titre;
-    //    private String editeur;
-    private String datePublication;
-    private String resume;
-    private String issn;
-
-    protected NoticeBibliographique(@NonNull NoticeBibliographiqueId id) {
-        super(id);
-    }
+public interface LocalId {
 }

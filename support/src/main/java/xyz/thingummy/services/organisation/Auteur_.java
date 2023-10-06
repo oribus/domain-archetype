@@ -20,27 +20,39 @@
  */
 package xyz.thingummy.biblio.catalogue;
 
-import lombok.Getter;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
 import lombok.NonNull;
-import lombok.Setter;
-import xyz.thingummy.commons.model.AbstractId_;
 
 import java.util.UUID;
 
-@Getter
-@Setter
-public abstract class NoticeBibliographiqueId extends AbstractId_<NoticeBibliographique> {
-    public NoticeBibliographiqueId(UUID id, Long juncture) {
-        super(id, juncture);
+@Entity
+public class Auteur_ extends Auteur {
+
+    @Transient
+    AuteurId_ id = new AuteurId_();
+
+    public Auteur_() {
+        super();
     }
 
-    public NoticeBibliographiqueId(UUID id) {
-        super(id, null);
+    @NonNull
+    @Override
+    public AuteurId getId() {
+        return id;
     }
 
-    public static @NonNull NoticeBibliographiqueId of(@NonNull String id) throws InstantiationException {
-        return AbstractId_.of(id, NoticeBibliographiqueId.class);
+    public void setId(@NonNull AuteurId_ id) {
+        this.id = id;
     }
 
+    @Id
+    public UUID getPK() {
+        return id.getId();
+    }
 
+    public void setPK(UUID uuid) {
+        id.setId(uuid);
+    }
 }
