@@ -22,6 +22,9 @@ package xyz.thingummy.commons.model;
 
 import java.util.function.Predicate;
 
+@FunctionalInterface
 public interface Specification<T> extends Predicate<T> {
-    boolean isSatisfiedBy(T t);
+    default boolean isSatisfiedBy(T t) {
+        return test(t);
+    }
 }

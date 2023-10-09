@@ -21,8 +21,8 @@
 
 package xyz.thingummy.services.organisation;
 
-import xyz.thingummy.commons.model.Id;
+import xyz.thingummy.commons.model.LocalId;
 
-public class SiteId implements Id<Site> {
+public class SiteId implements LocalId<Site, String> {
 
 }

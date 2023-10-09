@@ -22,6 +22,13 @@ package xyz.thingummy.commons.model;
 
 import java.io.Serializable;
 
+/**
+ * Base interface for all entities : that is objects which a persistent identity.
+ * Entities are either standalone ({@link Entity}) or part of an aggregate ({@link AggregatedEntity}, {@link AggregateRoot}).
+ *
+ * @param <T> The type of the entity
+ * @param <I> The type of the entity's identifier
+ */
 public interface BaseEntity<T extends BaseEntity<T, I>, I extends Id<T, ?>> extends Serializable {
     I getId();
 }

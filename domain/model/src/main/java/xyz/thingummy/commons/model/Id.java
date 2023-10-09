@@ -21,19 +21,27 @@
 
 package xyz.thingummy.commons.model;
 
+import java.util.function.Supplier;
+
 /**
- * An id is a value object that identifies an Entity being plain standalone or part of an aggregate
+ * An id is a value object that identifies an {@link Entity} being plain standalone or part of an aggregate
  * (either an {@link AggregatedEntity} or an {@link AggregateRoot}).
  *
  * @param <E> The type of the entity identified by this id
  * @param <T> The type of the id
  */
-public interface Id<E extends BaseEntity<E, ? extends Id<E, T>>, T> extends ValueObject<Id<E, T>> {
+public interface Id<E extends BaseEntity<E, ? extends Id<E, T>>, T> extends ValueObject<Id<E, T>>, Supplier<T> {
 
 
     /**
-     * Returns the id of the
+     * Returns the id of the entity (which can be a standalone {@link Entity} or part of
+     * an aggregate (either an {@link AggregatedEntity} or an {@link AggregateRoot})
      */
-    T getId();
+    T get();
+
+    /**
+     * Returns the id of the entity as a String
+     */
+    String asString();
 
 }

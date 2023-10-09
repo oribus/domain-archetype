@@ -21,9 +21,21 @@
 
 package xyz.thingummy.services.organisation;
 
-public class Site implements Entity<Site, SiteId> {
+import xyz.thingummy.commons.model.AggregatedEntity;
+
+public class Site implements AggregatedEntity<Site, SiteId, Organisation> {
     private SiteId id;
     private String nom; // Nom du site
     private Adresse adresse;
     private Organisation organisation;
+
+    @Override
+    public Organisation getAggregateRoot() {
+        return null;
+    }
+
+    @Override
+    public SiteId getId() {
+        return null;
+    }
 }

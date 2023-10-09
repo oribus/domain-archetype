@@ -21,9 +21,24 @@
 
 package xyz.thingummy.services.organisation;
 
+import xyz.thingummy.commons.model.AggregateRoot;
+import xyz.thingummy.commons.model.DomainEvent;
+
+import java.util.Collection;
+
 public class Organisation implements AggregateRoot<Organisation, OrganisationId> {
     private OrganisationId id;
     private String nom; // Nom
     private Adresse adresse;
+
+    @Override
+    public Collection<DomainEvent<Organisation>> domainEvents() {
+        return null;
+    }
+
+    @Override
+    public OrganisationId getId() {
+        return null;
+    }
 }
 
