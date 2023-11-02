@@ -21,8 +21,20 @@
 
 package xyz.thingummy.commons.model;
 
+/**
+ * Base interface for entities which are part of an aggregate (the root of this aggregate being an {@link AggregateRoot}).
+ * @param <E> The type of the entity
+ * @param <I> The type of the entity's identifier'
+ * @param <R> The type of the entity's aggregate root'
+ */
 public interface AggregatedEntity<E extends AggregatedEntity<E, I, R>, I extends LocalId<E, ?>, R extends AggregateRoot<?, ?>> extends BaseEntity<E, I> {
+    /**
+     * @return The root of the aggregate this entity belongs to.
+     */
     R getAggregateRoot();
 
+    /**
+     * @return The identifier of the entity.
+     */
     I getId();
 }

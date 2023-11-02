@@ -22,6 +22,11 @@ package xyz.thingummy.commons.model;
 
 import java.util.Collection;
 
+/**
+ * Base interface for entities which are the root of an aggregate.
+ * @param <E> The type of the entity
+ * @param <I> The type of the entity's identifier
+ */
 public interface AggregateRoot<E extends AggregateRoot<E, I>, I extends EntityId<E>> extends Entity<E, I> {
 
     Collection<DomainEvent<E>> domainEvents();
